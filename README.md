@@ -18,9 +18,9 @@
 <summary>👀 <b>Click to see more screenshots</b></summary>
 <br>
 
-![Dashboard](assets/scheduling.png)
+![scheduling](assets/Scheduling.png)
 <br>
-![Dashboard](assets/MedicalRecord.png)
+![MedicalRecord](assets/MedicalRecord.png)
 
 </details>
 
