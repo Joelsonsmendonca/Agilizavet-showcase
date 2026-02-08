@@ -65,6 +65,12 @@ Granular permission system beyond standard Django Groups.
 * **Logic:** Permissions are checked at the View level using custom decorators and mixins.
 * **Profiles:** Veterinarians, Receptionists, and Admins have distinct views and action permissions, integrated seamlessly with the Multi-tenant architecture.
 
+### 5. Smart Login & Ambiguity Resolution (UX/Security)
+Solved a critical Multi-tenancy UX challenge where a single email (e.g., a vet working at 2 clinics) maps to multiple user accounts.
+* **Problem:** Django's default authentication relies on `get(email=...)`, which crashes with `MultipleObjectsReturned` in a multi-tenant schema where the same email exists in different contexts.
+* **Solution:** Implemented a custom "Smart Login" flow. It detects ambiguity, verifies credentials against all matching accounts, and presents a secure "Select Account" middleware-driven screen if necessary.
+* **Outcome:** Eliminated 500 Errors and enabled seamless access for multi-clinic professionals without forcing them to use different emails.
+
 ---
 
 ### ⚠️ Disclaimer
